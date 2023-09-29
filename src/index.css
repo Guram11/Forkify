@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  grid-template-areas:
+    "head head"
+    "aside main";
+}
+
+main {
+  grid-area: main;
+}
+
+header {
+  grid-area: head;
+}
+
+/* Bookmarks */
+.bookmarks:hover,
+.bookmarkBtn:hover + .bookmarks {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* MODAL WINDOW */
+.upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 6rem;
+}
+
+.upload__column {
+  display: grid;
+  grid-template-columns: 1fr 2.8fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.upload__column label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.upload__column input {
+  font-size: 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  width: 30rem;
+}
+.upload__column input::placeholder {
+  color: #d3c7c3;
+}
+
+.upload__column input:focus {
+  outline: none;
+  border: 1px solid #f38e82;
+  background-color: #f9f5f3;
+}
+
+.upload__column button {
+  grid-column: 1 / span 2;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
+.upload__heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  grid-column: 1/-1;
+}
+
+/* Spinner */
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
