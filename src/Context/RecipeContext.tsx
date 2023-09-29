@@ -6,6 +6,8 @@ interface Props {
   children: ReactNode;
 }
 
+const KEY = "addc6774-0fda-47a3-9f7b-b3df056091ab";
+
 const RecipeContext = React.createContext<any>(null);
 
 const RecipeProvider = ({ children }: Props) => {
@@ -21,9 +23,7 @@ const RecipeProvider = ({ children }: Props) => {
       async function getRecipe() {
         try {
           const res = await fetch(
-            `https://forkify-api.herokuapp.com/api/v2/recipes/${selectedId}?key=${
-              import.meta.env.VITE_API_KEY
-            }`
+            `https://forkify-api.herokuapp.com/api/v2/recipes/${selectedId}?key=${KEY}`
           );
           const data = await res.json();
 
