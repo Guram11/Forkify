@@ -9,8 +9,6 @@ interface Props {
 const Recipe: React.FC<Props> = ({ recipe }) => {
   const { handleSelectRecipe } = useRecipeContext();
 
-  console.log("Log1");
-
   return (
     <li
       className="hover:bg-bgHeader hover:-translate-y-1 transition ease-linear duration-200"
