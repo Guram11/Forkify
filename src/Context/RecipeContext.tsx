@@ -22,8 +22,6 @@ const RecipeProvider = ({ children }: Props) => {
   const [bookmarked, setBookmarked] = useLocalStorage([], "bookmarks");
   const [modalOpen, SetModalOpen] = useState<boolean>(false);
 
-  console.log("Log");
-
   useEffect(
     function () {
       async function getRecipe() {
