@@ -1,4 +1,4 @@
-# Forkify
+# Forkify https://forkify-cyan.vercel.app/
 Forkify - App for searching, saving an adding new recipes - built with Typescript, Tailwind CSS
 
 ![Screenshot (35)](https://github.com/Guram11/Forkify/assets/121447764/a82ec2d7-a93a-43ad-9245-9c9a1def66c8)
