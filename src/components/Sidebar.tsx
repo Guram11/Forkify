@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useRecipeContext } from "../Context/RecipeContext";
 import Loader from "./Loader";
 import Error from "./Error";

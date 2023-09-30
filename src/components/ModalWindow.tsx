@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { HiOutlineCloudArrowUp } from "react-icons/hi2";
 import { useKey } from "../hooks/useKey";
 import { useEffect } from "react";
@@ -74,7 +72,7 @@ function ModalWindow() {
 
         SetModalOpen(false);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     }
 

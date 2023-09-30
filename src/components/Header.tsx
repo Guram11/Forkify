@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import logo from "./../assets/logo.png";
 import {
   HiOutlineBookmark,
@@ -8,6 +7,7 @@ import {
 import Search from "./Search";
 import { useRecipeContext } from "../Context/RecipeContext";
 import { Recipes } from "../interfaces";
+import React from "react";
 
 function Header() {
   const {
@@ -103,4 +103,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);

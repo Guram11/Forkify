@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   HiOutlineClock,
   HiOutlineUsers,
@@ -93,4 +92,4 @@ const RecipeDetails: React.FC = () => {
   );
 };
 
-export default RecipeDetails;
+export default React.memo(RecipeDetails);

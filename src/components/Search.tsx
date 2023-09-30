@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { useRecipeContext } from "../Context/RecipeContext";
 import React from "react";

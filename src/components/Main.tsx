@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   HiOutlineFaceSmile,
   HiChevronLeft,
@@ -8,12 +7,15 @@ import SelectedRecipe from "./SelectedRecipe";
 import Figure from "./Figure";
 import RecipeDetails from "./RecipeDetails";
 import { useRecipeContext } from "../Context/RecipeContext";
+import React from "react";
 
 function Main() {
   const { selectedId, recipe, ingredient, handleCloseRecipe } =
     useRecipeContext();
 
   const { title, image_url, publisher } = recipe;
+
+  console.log("log2");
 
   return (
     <main className="bg-bgHeader flex items-start justify-center relative">
@@ -61,4 +63,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default React.memo(Main);

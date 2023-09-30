@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Ingredients from "./Ingredients";
 import { ingredient } from "../interfaces";

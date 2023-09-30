@@ -80,7 +80,5 @@ export function useRecipes(query: string) {
     [query]
   );
 
-  console.log(recipes);
-
   return { recipes, isLoading, error };
 }

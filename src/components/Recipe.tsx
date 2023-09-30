@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { useRecipeContext } from "../Context/RecipeContext";
 import { Recipes } from "../interfaces";
@@ -9,6 +8,8 @@ interface Props {
 
 const Recipe: React.FC<Props> = ({ recipe }) => {
   const { handleSelectRecipe } = useRecipeContext();
+
+  console.log("Log1");
 
   return (
     <li
@@ -41,4 +42,4 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
   );
 };
 
-export default Recipe;
+export default React.memo(Recipe);

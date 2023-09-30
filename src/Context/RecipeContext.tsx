@@ -1,4 +1,10 @@
-import React, { ReactNode, useContext, useEffect, useState } from "react";
+import React, {
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { Recipes, bookmarks, ingredient } from "../interfaces";
 
@@ -15,6 +21,8 @@ const RecipeProvider = ({ children }: Props) => {
   const [ingredient, setIngredient] = useState<ingredient[]>([]);
   const [bookmarked, setBookmarked] = useLocalStorage([], "bookmarks");
   const [modalOpen, SetModalOpen] = useState<boolean>(false);
+
+  console.log("Log");
 
   useEffect(
     function () {
@@ -41,7 +49,7 @@ const RecipeProvider = ({ children }: Props) => {
           setRecipe(finalData);
           setIngredient(data.data.recipe.ingredients);
         } catch (err) {
-          console.log(err);
+          console.error(err);
         }
       }
 
@@ -50,29 +58,29 @@ const RecipeProvider = ({ children }: Props) => {
     [selectedId, setRecipe, bookmarked]
   );
 
-  function handleSelectRecipe(id: string) {
+  const handleSelectRecipe = useCallback((id: string) => {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
-  }
+  }, []);
 
-  function handleCloseRecipe() {
+  const handleCloseRecipe = useCallback(() => {
     setSelectedId(null);
-  }
+  }, []);
 
-  function handleaddToBookmarks(recipe: Recipes) {
+  const handleaddToBookmarks = useCallback((recipe: Recipes) => {
     setBookmarked((bookmarked: bookmarks[]) => [...bookmarked, recipe]);
-  }
+  }, []);
 
-  function handleToggleBookmarked(recipe: Recipes) {
+  const handleToggleBookmarked = useCallback((recipe: Recipes) => {
     setRecipe((prev) => {
       return { ...prev, bookmarked: recipe.bookmarked };
     });
-  }
+  }, []);
 
-  function handleDeleteBookmark(id: string) {
+  const handleDeleteBookmark = useCallback((id: string) => {
     setBookmarked((items: bookmarks[]) =>
       items.filter((item) => item.id !== id)
     );
-  }
+  }, []);
 
   return (
     <RecipeContext.Provider
