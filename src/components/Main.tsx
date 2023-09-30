@@ -15,8 +15,6 @@ function Main() {
 
   const { title, image_url, publisher } = recipe;
 
-  console.log("log2");
-
   return (
     <main className="bg-bgHeader flex items-start justify-center relative">
       {selectedId && (
